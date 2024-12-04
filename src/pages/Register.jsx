@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 const Register = () => {
 
-    const { createNewUser } = useContext(AuthContext);
+    const { createNewUser, loginWithGoogle } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
 
     const handleRegister = (e) => {
@@ -58,7 +58,29 @@ const Register = () => {
     }
 
     const handleLoginWithGoogle = (e) => {
-
+        loginWithGoogle()
+            .then(result => {
+                // console.log(result);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    text: `Welcome, ${result.user.displayName || 'User'}! Your account has been created.`,
+                    customClass: {
+                        confirmButton: 'bg-teal-400 text-white'
+                    }
+                });
+            })
+            .catch(error => {
+                // console.log(error.code);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: error.code,
+                    customClass: {
+                        confirmButton: 'bg-red-500 text-white'
+                    }
+                });
+            })
     }
 
     return (
@@ -95,9 +117,7 @@ const Register = () => {
                     <div className="form-control relative">
                         <label className="label text-lg font-medium text-gray-700">Password</label>
                         <input type={`${showPassword ? 'text' : 'password'}`} name="password" placeholder="Enter your password" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-1 focus:ring-teal-300 transition" />
-                        <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3 bottom-[10px] text-gray-600 bg-gray-100 rounded-full cursor-pointer p-1"> {showPassword ? <FaEyeSlash size={20}/> : <FaEye size={20} /> } </span>
-                        {/* <input type={`${showPassword ? 'text' : 'password'}`} name="password" placeholder="Enter your password" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-1 focus:ring-teal-300 transition" /> */}
-                        {/* <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3 bottom-[14px] text-gray-600 cursor-pointer"> {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}</span> */}
+                        <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3 bottom-[10px] text-gray-600 bg-gray-100 rounded-full cursor-pointer p-1"> {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />} </span>
                     </div>
 
                     {/* Terms & Conditions */}
