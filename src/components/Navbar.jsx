@@ -1,9 +1,12 @@
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+    const {name} = useContext(AuthContext);
+    // console.log(name);
     const [open, setOpen] = useState(false);
 
     return (

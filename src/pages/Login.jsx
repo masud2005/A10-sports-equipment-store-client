@@ -1,19 +1,73 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const handleLogin = (e) => {
+    const { loginWithGoogle, userLogin } = useContext(AuthContext);
 
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        userLogin(email, password)
+        .then(result => {
+            console.log(result.user);
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Successful',
+                text: `Welcome back, ${result.user.displayName || 'User'}!`,
+                customClass: {
+                    confirmButton: 'bg-teal-400 text-white'
+                }
+            });
+        })
+        .catch(error => {
+            console.log(error.code);
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Failed',
+                text: error.code,
+                customClass: {
+                    confirmButton: 'bg-red-500 text-white'
+                }
+            });
+        })
     }
 
     const handleLoginWithGoogle = () => {
-
+        loginWithGoogle()
+            .then(result => {
+                // console.log(result);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: `Welcome, ${result.user.displayName || 'User'}!`,
+                    customClass: {
+                        confirmButton: 'bg-teal-400 text-white'
+                    }
+                });
+            })
+            .catch(error => {
+                // console.log(error.code);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: error.code,
+                    customClass: {
+                        confirmButton: 'bg-red-500 text-white'
+                    }
+                });
+            })
     }
 
     return (
-        <div className="flex items-center justify-center my-10">
+        <div className="flex items-center justify-center my-10 px-2">
 
             {/* <Helmet>
                 <title>Login || Career Counseling</title>
