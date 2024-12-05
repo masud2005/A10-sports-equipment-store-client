@@ -46,7 +46,7 @@ import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const { user, userLogOut } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleLogOut = () => {
