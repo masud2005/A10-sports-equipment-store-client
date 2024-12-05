@@ -27,7 +27,10 @@ const router = createBrowserRouter([
             {
                 path: '/sports-equipment/details/:id',
                 element: <SportsEquipmentDetails />,
-                // loader: ({params}) => 
+                loader: ({params}) => {
+                    fetch(`http://localhost:5000/equipments/${params.id}`)
+                    // console.log(params.id);
+                }
             },
             {
                 path: '/add-equipment',

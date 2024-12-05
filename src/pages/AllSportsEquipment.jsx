@@ -5,7 +5,7 @@ const AllSportsEquipment = () => {
 
     const loadedData = useLoaderData();
     const [sportsEquipments, setSportsEquipments] = useState(loadedData)
-    console.log(sportsEquipments);
+    // console.log(sportsEquipments);
 
     return (
         <div className='container mx-auto my-10 p-2 md:p-5'>
