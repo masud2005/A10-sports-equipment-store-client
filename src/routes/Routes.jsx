@@ -7,6 +7,7 @@ import MyEquipmentList from "../pages/MyEquipmentList";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
+import SportsEquipmentDetails from "../pages/SportsEquipmentDetails";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/all-sports-equipment',
-                element: <AllSportsEquipment />
+                element: <AllSportsEquipment />,
+                loader: () => fetch('http://localhost:5000/equipments')
+            },
+            {
+                path: '/sports-equipment/details/:id',
+                element: <SportsEquipmentDetails />,
+                // loader: ({params}) => 
             },
             {
                 path: '/add-equipment',
