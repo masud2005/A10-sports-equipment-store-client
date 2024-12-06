@@ -47,7 +47,7 @@ const AddEquipment = () => {
     return (
         <div className="container mx-auto my-10 p-2 md:p-5">
             <div className='text-center'>
-                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text inline-block">Add New Equipment</h2>
+                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text inline-block -mt-10">Add New Equipment</h2>
             </div>
             <div className='bg-gradient-to-tl from-indigo-400 via-purple-500 to-teal-500 rounded-lg p-[1px]'>
                 <form onSubmit={handleAddNewEquipment} className="bg-gradient-to-tr from-indigo-50 via-purple-50 to-teal-50 shadow-lg p-3 lg:p-6 rounded-lg">
@@ -102,7 +102,7 @@ const AddEquipment = () => {
                     </div>
 
                     {/* Submit Button */}
-                    <button type="submit" className="mt-6 w-full bg-gradient-to-tr from-indigo-400 to-teal-400  p-3 rounded-lg font-bold hover:bg-green-700 text-lg">Submit</button>
+                    <button type="submit" className="mt-6 w-full bg-gradient-to-tr from-indigo-300 to-teal-300 p-3 rounded-lg font-bold text-lg">Submit</button>
                 </form>
             </div>
         </div>

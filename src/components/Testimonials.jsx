@@ -24,7 +24,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <div className="container mx-auto my-16 px-6 md:px-12">
+        <div className="container mx-auto my-16 px-2">
             {/* Section Header */}
             <div className="text-center mb-12">
                 <h2 className="text-4xl font-extrabold text-gray-800 mb-4">What Our <span className="text-teal-600">Customers Say</span></h2>

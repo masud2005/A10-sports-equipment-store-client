@@ -29,7 +29,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="">
+        <nav className="h-[90px] place-content-center">
             <div className="container mx-auto flex justify-between items-center  py-4 px-2">
                 {/* Left Section: Logo */}
                 <div className="flex items-center">
@@ -53,12 +53,12 @@ const Navbar = () => {
                     {
                         user ? <div className="flex items-center gap-3">
                             <div className="relative group">
-                                <img className="rounded-full w-14 h-14 border-2 border-teal-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
+                                <img className="rounded-full w-14 h-14 border border-teal-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
                                 <div className="absolute left-0 top-full mt-2 px-4 py-2 bg-gray-800 text-white text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap overflow-hidden">
                                     {user.displayName || 'Anonymous User'}
                                 </div>
                             </div>
-                            <button onClick={handleLogOut} className="btn border-teal-600 bg-gradient-to-r hover:from-indigo-400 hover:to-teal-400 text-gray-800 hover:border-indigo-600 rounded-xl transition-colors duration-500">Log Out</button>
+                            <button onClick={handleLogOut} className="btn border-teal-600 bg-gradient-to-r from-indigo-300 to-teal-300 hover:from-indigo-400 hover:to-teal-400 text-gray-800 hover:border-indigo-600 rounded-xl transition-colors duration-500 text-base">Log Out</button>
                         </div> :
                             <div className='flex gap-8 items-center'>
                                 <NavLink to="/login" className={({ isActive }) => isActive ? 'text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'text-base hover:text-indigo-600'}>Login</NavLink>
@@ -68,7 +68,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Hamburger Menu for Mobile */}
-                <div onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden bg-gray-300 p-2 rounded-md text-2xl cursor-pointer">
+                <div onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden bg-gradient-to-r from-indigo-300 to-teal-300 p-2 rounded-md text-2xl cursor-pointer">
                     {menuOpen ? <IoMdClose /> : <IoMdMenu />}
                 </div>
             </div>
@@ -76,20 +76,20 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <div className={`${menuOpen ? 'left-0' : '-left-[100%]'} absolute duration-500 w-full bg-gray-50/95`}>
                 <div className={`flex-col lg:hidden gap-4 py-4 px-4`}>
-                    <NavLink to="/" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600'} onClick={() => setMenuOpen(false)}>Home</NavLink>
-                    <NavLink to="/all-sports-equipment" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600'} onClick={() => setMenuOpen(false)}>All Sports Equipment</NavLink>
-                    <NavLink to="/add-equipment" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600'} onClick={() => setMenuOpen(false)}>Add Equipment</NavLink>
-                    <NavLink to="/my-equipment-list" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600'} onClick={() => setMenuOpen(false)}>My Equipment List</NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600 pt-2'} onClick={() => setMenuOpen(false)}>Home</NavLink>
+                    <NavLink to="/all-sports-equipment" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600 pt-2'} onClick={() => setMenuOpen(false)}>All Sports Equipment</NavLink>
+                    <NavLink to="/add-equipment" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600 pt-2'} onClick={() => setMenuOpen(false)}>Add Equipment</NavLink>
+                    <NavLink to="/my-equipment-list" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600 pt-2'} onClick={() => setMenuOpen(false)}>My Equipment List</NavLink>
                     <div className='flex gap-10 justify-around pt-5 mt-4 border-t-2'>
                         {
                             user ? <div className="flex items-center gap-3">
                                 <div className="relative group">
-                                    <img className="rounded-full w-14 h-14 border-2 border-indigo-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
+                                    <img className="rounded-full w-14 h-14 border border-teal-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
                                     <div className="absolute left-0 top-full mt-2 px-4 py-2 bg-gray-800 text-white text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap overflow-hidden">
                                         {user.displayName || 'Anonymous User'}
                                     </div>
                                 </div>
-                                <button onClick={handleLogOut} className="btn border-purple-600 hover:bg-indigo-500 text-gray-800 rounded-xl transition-all duration-300">Log Out</button>
+                                <button onClick={handleLogOut} className="btn border-teal-600 bg-gradient-to-r from-indigo-300 to-teal-300 hover:from-indigo-400 hover:to-teal-400 text-gray-800 hover:border-indigo-600 rounded-xl transition-colors duration-500 text-base">Log Out</button>
                             </div> :
                                 <div className='flex gap-10'>
                                     <NavLink to="/login" className={({ isActive }) => isActive ? 'block text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'block text-base hover:text-teal-600'} onClick={() => setMenuOpen(false)}>Login</NavLink>

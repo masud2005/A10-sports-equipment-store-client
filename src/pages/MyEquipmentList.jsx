@@ -60,7 +60,7 @@ const MyEquipmentList = () => {
 
     return (
         <div className="container mx-auto px-2 md:px-4 py-8">
-            <h1 className="text-4xl font-extrabold text-center text-indigo-500 mb-12">
+            <h1 className="text-3xl font-extrabold text-center text-indigo-500 mb-12">
                 My <span className="text-teal-500">Equipment List</span>
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
