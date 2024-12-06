@@ -12,9 +12,9 @@ const SportsSlider = () => {
         <div className="container px-2 mx-auto my-16">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-5 md:gap-2 lg:gap-6 items-center">
                 {/* Info Section */}
-                <div className="md:col-span-2 bg-gradient-to-r from-green-500 to-blue-500 p-[2px] rounded-lg h-full">
+                <div className="md:col-span-2 bg-gradient-to-r from-indigo-500 to-teal-500 p-[2px] rounded-lg h-full">
                     <div className="bg-gray-100 p-5 lg:p-4 xl:p-8 rounded-lg h-full">
-                        <h1 className="text-3xl font-bold text-green-600 mb-4">
+                        <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-teal-500 inline-block text-transparent bg-clip-text mb-4">
                             Welcome to EquiSports!
                         </h1>
                         <p className="text-gray-700 mb-4">
@@ -53,9 +53,9 @@ const SportsSlider = () => {
                         <SwiperSlide>
                             <div className="relative h-[450px] flex items-center justify-center">
                                 <img
-                                    src="https://via.placeholder.com/800x450.png?text=Sports+Gear+Sale"
+                                    src="https://i.ibb.co.com/56RdzyG/sports-gear-ready-stockcake.jpg"
                                     alt="Top Deals"
-                                    className="absolute inset-0 w-full h-full object-cover brightness-75"
+                                    className="absolute inset-0 w-full h-full object-cover brightness-50"
                                 />
                                 <div className="relative text-center text-white">
                                     <h2 className="text-4xl font-extrabold mb-3">
@@ -72,9 +72,9 @@ const SportsSlider = () => {
                         <SwiperSlide>
                             <div className="relative h-[450px] flex items-center justify-center">
                                 <img
-                                    src="https://via.placeholder.com/800x450.png?text=New+Arrivals"
+                                    src="https://i.ibb.co.com/Jk1C1yd/images-3.jpg"
                                     alt="New Arrivals"
-                                    className="absolute inset-0 w-full h-full object-cover brightness-75"
+                                    className="absolute inset-0 w-full h-full object-center brightness-50"
                                 />
                                 <div className="relative text-center text-white">
                                     <h2 className="text-4xl font-extrabold mb-3">
@@ -91,9 +91,9 @@ const SportsSlider = () => {
                         <SwiperSlide>
                             <div className="relative h-[450px] flex items-center justify-center">
                                 <img
-                                    src="https://via.placeholder.com/800x450.png?text=Customer+Favorites"
+                                    src="https://i.ibb.co.com/kq8WGNF/360-F-886055846-b-F4-Hibyd277-Hxv1-ZKgf-UYRTLO8d-ZANx7.jpg"
                                     alt="Customer Favorites"
-                                    className="absolute inset-0 w-full h-full object-cover brightness-75"
+                                    className="absolute inset-0 w-full h-full object-cover brightness-50"
                                 />
                                 <div className="relative text-center text-white">
                                     <h2 className="text-4xl font-extrabold mb-3">

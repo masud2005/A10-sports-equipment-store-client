@@ -19,7 +19,7 @@ const MyEquipmentList = () => {
         // console.log(id);
         Swal.fire({
             title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            text: "Once deleted, you won't be able to revert this action!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#14B8A6",
@@ -32,11 +32,11 @@ const MyEquipmentList = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log("delete is one", data);
+                        // console.log("delete is one", data);
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "The equipment has been successfully deleted.",
                                 icon: "success",
                                 confirmButtonColor: "#14B8A6"
                             });
@@ -48,7 +48,7 @@ const MyEquipmentList = () => {
                         console.error("Error deleting user:", error);
                         Swal.fire({
                             title: "Error!",
-                            text: "Failed to delete the user.",
+                            text: "Something went wrong, the equipment could not be deleted.",
                             icon: "error",
                             confirmButtonColor: "#EF4444",
                         });
