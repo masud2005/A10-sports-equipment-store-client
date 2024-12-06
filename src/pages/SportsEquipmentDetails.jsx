@@ -16,19 +16,7 @@ const SportsEquipmentDetails = () => {
             .catch(error => console.error('Error fetching equipment:', error));
     }, [id]);
 
-    const {
-        image,
-        itemName,
-        categoryName,
-        price,
-        rating,
-        customization,
-        processingTime,
-        stockStatus,
-        userEmail,
-        userName,
-        description,
-    } = singleEquipment;
+    const { image, itemName, categoryName, price, rating, customization, processingTime, stockStatus, userEmail, userName, description } = singleEquipment;
 
     return (
         <div className="py-12 px-2 container mx-auto">

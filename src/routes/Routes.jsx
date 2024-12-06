@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
 import SportsEquipmentDetails from "../pages/SportsEquipmentDetails";
 import PrivateRoute from "../components/PrivateRoute";
+import UpdateEquipment from "../pages/UpdateEquipment";
 
 const router = createBrowserRouter([
     {
@@ -30,10 +31,8 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <SportsEquipmentDetails />
                 </PrivateRoute>,
-                loader: ({ params }) => {
-                    fetch(`http://localhost:5000/equipments/${params.id}`)
-                    // console.log(params.id);
-                }
+                loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`)
+                
             },
             {
                 path: '/add-equipment',
@@ -45,7 +44,11 @@ const router = createBrowserRouter([
                 path: '/my-equipment-list',
                 element: <PrivateRoute>
                     <MyEquipmentList />
-                </PrivateRoute>
+                </PrivateRoute>,
+            },
+            {
+                path: '/update-equipment',
+                element: <UpdateEquipment />
             },
             {
                 path: '/login',

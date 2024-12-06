@@ -1,9 +1,75 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const MyEquipmentList = () => {
+    const { user } = useContext(AuthContext);
+    const [userEquipments, setUserEquipments] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/equipments/email/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setUserEquipments(data);
+            });
+    }, [user]);
+
+
     return (
-        <div>
-            this is My Equipment List
+        <div className="container mx-auto px-2 md:px-4 py-8">
+            <h1 className="text-4xl font-extrabold text-center text-indigo-500 mb-12">
+                My <span className="text-teal-500">Equipment List</span>
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {userEquipments.map(equipment => (
+                    <div
+                        key={equipment._id}
+                        className="relative bg-gradient-to-br from-teal-50 to-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col"
+                    >
+                        {/* Image Section */}
+                        <div className="relative h-48">
+                            <img
+                                src={equipment.image}
+                                alt={equipment.itemName}
+                                className="w-full h-full object-cover rounded-t-lg"
+                            />
+                            <span className="absolute top-2 left-2 bg-gradient-to-r from-indigo-500 to-teal-500 text-white px-3 py-1 rounded-lg shadow-md font-medium ">
+                                {equipment.categoryName}
+                            </span>
+                        </div>
+
+                        {/* Content Section */}
+                        <div className="flex-1 p-3 xl:p-6 flex flex-col justify-between">
+                            <div>
+                                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text mb-2">{equipment.itemName}</h2>
+                                <p className=" text-gray-500 mb-4">
+                                    {equipment.description.split(' ').slice(0, 20).join(' ')}...
+                                </p>
+                                <div className="flex justify-between items-center mb-4">
+                                    <p className="text-lg font-semibold text-teal-700">${equipment.price}</p>
+                                    <p className=" font-medium text-gray-500">⭐ {equipment.rating}</p>
+                                </div>
+                                <p className=" text-gray-600 mb-4">
+                                    <span className="font-semibold">Stock:</span> {equipment.stockStatus} available
+                                </p>
+                                <p className=" text-gray-600 mb-4">
+                                    <span className="font-semibold">Customization:</span> {equipment.customization}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="w-full flex items-center justify-center gap-4 bg-gray-50 py-3 border-t">
+                            <Link to={`/update-equipment/${equipment._id}`} className="flex items-center gap-2 px-4 py-2 text-white bg-teal-500 rounded-lg hover:bg-teal-600 transition-all" > Update </Link>
+                            <Link
+                                className="flex items-center gap-2 px-4 py-2 text-white bg-red-400 rounded-lg hover:bg-red-500 transition-all"
+                            >
+                                Delete
+                            </Link>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
