@@ -28,7 +28,7 @@ const AllSportsEquipment = () => {
                                 <td>{equipment.itemName}</td>
                                 <td>{equipment.categoryName}</td>
                                 <td>${equipment.price}</td>
-                                <td><Link to={`/sports-equipment/details/${equipment._id}`} className='bg-gradient-to-r from-teal-300 to-indigo-300 hover:from-teal-400 hover:to-indigo-400 py-[6px] px-3 rounded-full cursor-pointer text-black'>View Details</Link></td>
+                                <td><Link to={`/sports-equipment/details/${equipment._id}`} className='bg-gradient-to-r from-teal-300 to-indigo-300 hover:from-teal-400 hover:to-indigo-400 py-[6px] px-3 rounded-full cursor-pointer text-black'>ViewDetails</Link></td>
                             </tr>
                             )
                         }

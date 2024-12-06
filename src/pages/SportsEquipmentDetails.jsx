@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-// import { AuthContext } from '../provider/AuthProvider';
+import { useLoaderData } from 'react-router-dom';
 
 const SportsEquipmentDetails = () => {
     // const {user} = useState(AuthContext);
-    const { id } = useParams();
-    const [singleEquipment, setSingleEquipment] = useState({});
+    // const { id } = useParams();
+    // const [singleEquipment, setSingleEquipment] = useState({});
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/equipments/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setSingleEquipment(data);
-            })
-            .catch(error => console.error('Error fetching equipment:', error));
-    }, [id]);
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/equipments/${id}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setSingleEquipment(data);
+    //         })
+    //         .catch(error => console.error('Error fetching equipment:', error));
+    // }, [id]);
+    
+    const singleEquipment = useLoaderData();
 
     const { image, itemName, categoryName, price, rating, customization, processingTime, stockStatus, userEmail, userName, description } = singleEquipment;
 
