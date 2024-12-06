@@ -21,7 +21,7 @@ const AddEquipment = () => {
         const userEmail = form.userEmail.value;
         const userName = form.userName.value;
         const description = form.description.value;
-
+        // console.log(image, itemName, categoryName, price, rating, customization, processingTime, stockStatus, userEmail, userName, description);
         const newEquipment = { image, itemName, categoryName, price, rating, customization, processingTime, stockStatus, userEmail, userName, description };
 
         fetch('http://localhost:5000/equipments', {
@@ -84,11 +84,11 @@ const AddEquipment = () => {
                     </div>
                     <div>
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="userEmail">User Email</label>
-                        <input type="email" id="userEmail" name="userEmail" className="w-full p-2 border rounded-lg bg-gray-100" placeholder="User Email" readOnly defaultValue={user?.displayName} />
+                        <input type="email" id="userEmail" name="userEmail" className="w-full p-2 border rounded-lg bg-gray-100" placeholder="User Email" readOnly defaultValue={user?.email} />
                     </div>
                     <div>
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="userName">User Name</label>
-                        <input type="text" id="userName" name="userName" className="w-full p-2 border rounded-lg bg-gray-100" placeholder="User Name" readOnly defaultValue={user?.email} />
+                        <input type="text" id="userName" name="userName" className="w-full p-2 border rounded-lg bg-gray-100" placeholder="User Name" readOnly defaultValue={user?.displayName} />
                     </div>
                 </div>
 

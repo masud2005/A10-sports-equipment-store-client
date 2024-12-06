@@ -79,8 +79,12 @@ const Navbar = () => {
                 <div className="hidden lg:flex items-center gap-6">
                     <NavLink to="/" className={({ isActive }) => isActive ? 'text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'text-base hover:text-indigo-600'}>Home</NavLink>
                     <NavLink to="/all-sports-equipment" className={({ isActive }) => isActive ? 'text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'text-base hover:text-indigo-600'}>All Sports Equipment</NavLink>
-                    <NavLink to="/add-equipment" className={({ isActive }) => isActive ? 'text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'text-base hover:text-indigo-600'}>Add Equipment</NavLink>
-                    <NavLink to="/my-equipment-list" className={({ isActive }) => isActive ? 'text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'text-base hover:text-indigo-600'}>My Equipment List</NavLink>
+                    {
+                        user && <>
+                            <NavLink to="/add-equipment" className={({ isActive }) => isActive ? 'text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'text-base hover:text-indigo-600'}>Add Equipment</NavLink>
+                            <NavLink to="/my-equipment-list" className={({ isActive }) => isActive ? 'text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'text-base hover:text-indigo-600'}>My Equipment List</NavLink>
+                        </>
+                    }
                 </div>
 
                 {/* Right Section: Login/Register Buttons */}
@@ -88,12 +92,12 @@ const Navbar = () => {
                     {
                         user ? <div className="flex items-center gap-3">
                             <div className="relative group">
-                                <img className="rounded-full w-14 h-14 border-2 border-indigo-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
+                                <img className="rounded-full w-14 h-14 border-2 border-teal-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
                                 <div className="absolute left-0 top-full mt-2 px-4 py-2 bg-gray-800 text-white text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap overflow-hidden">
                                     {user.displayName || 'Anonymous User'}
                                 </div>
                             </div>
-                            <button onClick={handleLogOut} className="btn border-purple-600 hover:bg-indigo-500 text-gray-800 rounded-xl transition-all duration-300">Log Out</button>
+                            <button onClick={handleLogOut} className="btn border-teal-600 bg-gradient-to-r hover:from-indigo-400 hover:to-teal-400 text-gray-800 hover:border-indigo-600 rounded-xl transition-colors duration-500">Log Out</button>
                         </div> :
                             <div className='flex gap-8 items-center'>
                                 <NavLink to="/login" className={({ isActive }) => isActive ? 'text-lg font-semibold border-b-2 border-indigo-600 text-teal-600' : 'text-base hover:text-indigo-600'}>Login</NavLink>

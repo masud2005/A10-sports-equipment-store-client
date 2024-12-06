@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
 import SportsEquipmentDetails from "../pages/SportsEquipmentDetails";
+import PrivateRoute from "../components/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -26,19 +27,25 @@ const router = createBrowserRouter([
             },
             {
                 path: '/sports-equipment/details/:id',
-                element: <SportsEquipmentDetails />,
-                loader: ({params}) => {
+                element: <PrivateRoute>
+                    <SportsEquipmentDetails />
+                </PrivateRoute>,
+                loader: ({ params }) => {
                     fetch(`http://localhost:5000/equipments/${params.id}`)
                     // console.log(params.id);
                 }
             },
             {
                 path: '/add-equipment',
-                element: <AddEquipment />
+                element: <PrivateRoute>
+                    <AddEquipment />
+                </PrivateRoute>
             },
             {
                 path: '/my-equipment-list',
-                element: <MyEquipmentList />
+                element: <PrivateRoute>
+                    <MyEquipmentList />
+                </PrivateRoute>
             },
             {
                 path: '/login',
