@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const MyEquipmentList = () => {
     const { user } = useContext(AuthContext);
@@ -13,6 +14,48 @@ const MyEquipmentList = () => {
                 setUserEquipments(data);
             });
     }, [user]);
+
+    const handleDeleteEquipment = (id) => {
+        // console.log(id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#14B8A6",
+            cancelButtonColor: "#EF4444",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/equipments/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log("delete is one", data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success",
+                                confirmButtonColor: "#14B8A6"
+                            });
+                            const remainingUsers = userEquipments.filter(equipment => equipment._id !== id);
+                            setUserEquipments(remainingUsers);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error deleting user:", error);
+                        Swal.fire({
+                            title: "Error!",
+                            text: "Failed to delete the user.",
+                            icon: "error",
+                            confirmButtonColor: "#EF4444",
+                        });
+                    });
+            }
+        });
+    }
 
 
     return (
@@ -61,11 +104,7 @@ const MyEquipmentList = () => {
                         {/* Action Buttons */}
                         <div className="w-full flex items-center justify-center gap-4 bg-gray-50 py-3 border-t">
                             <Link to={`/update-equipment/${equipment._id}`} className="flex items-center gap-2 px-4 py-2 text-white bg-teal-500 rounded-lg hover:bg-teal-600 transition-all" > Update </Link>
-                            <Link
-                                className="flex items-center gap-2 px-4 py-2 text-white bg-red-400 rounded-lg hover:bg-red-500 transition-all"
-                            >
-                                Delete
-                            </Link>
+                            <button onClick={() => handleDeleteEquipment(equipment._id)} className="flex items-center gap-2 px-4 py-2 text-white bg-red-400 rounded-lg hover:bg-red-500 transition-all">Delete</button>
                         </div>
                     </div>
                 ))}
