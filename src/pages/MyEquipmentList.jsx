@@ -63,6 +63,11 @@ const MyEquipmentList = () => {
             <h1 className="text-3xl font-extrabold text-center text-indigo-500 mb-12">
                 My <span className="text-teal-500">Equipment List</span>
             </h1>
+            {
+                userEquipments.length === 0 && <div>
+                    <h1 className='text-center text-3xl font-semibold text-red-400'>You haven't added anything yet. Add some Equipment!</h1>
+                </div>
+            }
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {userEquipments.map(equipment => (
                     <div

@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Register = () => {
 
-    const { createNewUser, loginWithGoogle } = useContext(AuthContext);
+    const { createNewUser, loginWithGoogle, updateProfileInfo } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -43,6 +44,8 @@ const Register = () => {
                         confirmButton: 'bg-teal-500 text-white'
                     }
                 });
+                updateProfileInfo(name, photo);
+                navigate('/');
             })
             .catch(error => {
                 console.log(error.code);
@@ -98,7 +101,7 @@ const Register = () => {
                     {/* Name Field */}
                     <div className="form-control">
                         <label className="label text-lg font-medium text-gray-700">Your Name</label>
-                        <input type="text" name="name" placeholder="Enter your name" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-1 focus:ring-teal-300 transition" />
+                        <input type="text" name="name" placeholder="Enter your name" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-1 focus:ring-teal-300 transition" required/>
                     </div>
 
                     {/* Photo URL Field */}

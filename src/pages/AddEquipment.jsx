@@ -33,7 +33,7 @@ const AddEquipment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         icon: 'success',
@@ -41,7 +41,16 @@ const AddEquipment = () => {
                         text: 'Your equipment has been successfully added to the Database.'
                     })
                 }
+                form.reset();
             })
+            .catch(error => {
+                // console.error('Error adding equipment:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Failed to Add Equipment',
+                    text: 'Something went wrong while adding the equipment. Please try again later.'
+                });
+            });
     }
 
     return (
