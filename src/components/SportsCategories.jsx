@@ -29,7 +29,7 @@ const SportsCategories = () => {
     ];
 
     return (
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 pt-16">
             {/* Section Header */}
             <div className="text-center mb-12 px-5">
                 <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
