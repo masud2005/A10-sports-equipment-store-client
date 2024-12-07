@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
 
     const { loginWithGoogle, userLogin } = useContext(AuthContext);
+    const location = useLocation();
+    // console.log(location);
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -26,6 +29,7 @@ const Login = () => {
                     confirmButton: 'bg-teal-500 text-white'
                 }
             });
+            navigate(location?.state ? location?.state : '/');
         })
         .catch(error => {
             console.log(error.code);
@@ -52,6 +56,7 @@ const Login = () => {
                         confirmButton: 'bg-teal-400 text-white'
                     }
                 });
+                navigate(location?.state ? location?.state : '/');
             })
             .catch(error => {
                 // console.log(error.code);

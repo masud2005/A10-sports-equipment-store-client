@@ -45,7 +45,7 @@ const Testimonials = () => {
                         <img
                             src={review.image}
                             alt={review.name}
-                            className="w-24 h-24 mx-auto rounded-full border-4 border-indigo-500 mb-4"
+                            className="w-24 h-24 mx-auto rounded-full border-2 border-indigo-500 mb-4"
                         />
 
                         {/* Name and Rating */}

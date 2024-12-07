@@ -27,18 +27,8 @@ const AllSportsEquipment = () => {
 
             {/* Sort Buttons */}
             <div className="flex justify-end gap-4 mb-6">
-                <button
-                    onClick={() => handleSort('asc')}
-                    className="bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded"
-                >
-                    Sort by Price (Low to High)
-                </button>
-                <button
-                    onClick={() => handleSort('desc')}
-                    className="bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded"
-                >
-                    Sort by Price (High to Low)
-                </button>
+                <button onClick={() => handleSort('asc')} className="bg-teal-500 hover:bg-teal-600 text-white py-2 text-sm md:text-base px-2 md:px-4 rounded"> Sort by Price (Low to High) </button>
+                <button onClick={() => handleSort('desc')} className="bg-indigo-500 hover:bg-indigo-600 text-white py-2 text-sm md:text-base px-2 md:px-4 rounded" >Sort by Price (High to Low)</button>
             </div>
 
             {/* Equipment Table */}
@@ -62,12 +52,7 @@ const AllSportsEquipment = () => {
                                 <td>{equipment.categoryName}</td>
                                 <td>${equipment.price}</td>
                                 <td>
-                                    <Link
-                                        to={`/sports-equipment/details/${equipment._id}`}
-                                        className="bg-gradient-to-r from-teal-300 to-indigo-300 hover:from-teal-400 hover:to-indigo-400 py-[6px] px-3 rounded-full cursor-pointer text-black"
-                                    >
-                                        View Details
-                                    </Link>
+                                    <Link to={`/sports-equipment/details/${equipment._id}`} className="bg-gradient-to-r from-teal-300 to-indigo-300 hover:from-teal-400 hover:to-indigo-400 py-[6px] px-3 rounded-full cursor-pointer text-black whitespace-nowrap">View Details</Link>
                                 </td>
                             </tr>
                         ))}
