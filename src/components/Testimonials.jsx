@@ -26,8 +26,8 @@ const Testimonials = () => {
     return (
         <div className="container mx-auto my-16 px-2">
             {/* Section Header */}
-            <div className="text-center mb-12">
-                <h2 className="text-4xl font-extrabold text-gray-800 mb-4">What Our <span className="text-teal-600">Customers Say</span></h2>
+            <div className="text-center mb-12 px-5">
+                <h2 className="text-4xl font-extrabold text-indigo-600 mb-4">What Our <span className="text-gray-800">Customers Say</span></h2>
                 <p className="text-lg text-gray-600">
                     Hear from our satisfied customers who love our products and services. 
                     Their feedback inspires us to keep delivering excellence.
