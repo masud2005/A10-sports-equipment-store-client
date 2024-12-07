@@ -32,8 +32,8 @@ const SportsCategories = () => {
         <div className="container mx-auto px-4 pt-16">
             {/* Section Header */}
             <div className="text-center mb-12 px-5">
-                <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
-                    Explore Our <span className="text-teal-600">Sports Categories</span>
+                <h2 className="text-4xl font-extrabold text-teal-500 mb-4">
+                    Explore Our <span className="text-indigo-500">Sports Categories</span>
                 </h2>
                 <p className="text-lg text-gray-600">
                     Browse through our range of categories to find the perfect gear for your favorite sport.

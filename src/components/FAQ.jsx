@@ -42,7 +42,7 @@ const FAQ = () => {
             {/* Section Header */}
             <div className="text-center mb-12 px-5">
                 <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
-                    <span className="text-gray-800">Frequently</span> <span className="text-teal-600">Asked Questions</span>
+                    <span className="text-teal-500">Frequently</span> <span className="text-indigo-500">Asked Questions</span>
                 </h2>
                 <p className="text-lg text-gray-600">
                     Find answers to the most commonly asked questions about our services and products.

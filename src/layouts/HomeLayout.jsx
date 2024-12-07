@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+// import ThemeToggle from "../components/ThemeToggle";
 
 const HomeLayout = () => {
     return (
@@ -12,6 +13,7 @@ const HomeLayout = () => {
             <header className="sticky top-0 z-50 shadow-lg bg-opacity-60 backdrop-blur-md">
                 <Navbar />
             </header>
+            {/* <ThemeToggle /> */}
 
             <main className="min-h-[calc(100vh-321px)]">
                 <Outlet />

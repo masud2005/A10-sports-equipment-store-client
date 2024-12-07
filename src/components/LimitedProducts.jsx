@@ -15,7 +15,7 @@ const LimitedProducts = () => {
     return (
         <div className="container mx-auto px-2 md:px-4 ">
             <div className="text-center mb-12 ">
-                <h2 className="text-4xl font-extrabold text-indigo-600 mb-4">Explore Our <span className="text-gray-800">Premium Sports Equipment Collection</span></h2>
+                <h2 className="text-4xl font-extrabold text-indigo-500 mb-4">Explore Our <span className="text-teal-500">Premium Sports Equipment Collection</span></h2>
                 <p className="text-lg text-gray-600 px-5">
                     Find top-quality gear for football, tennis, cricket, and more. Shop now to enhance your game!
                 </p>
