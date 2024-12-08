@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllSportsEquipment = () => {
@@ -20,6 +21,9 @@ const AllSportsEquipment = () => {
 
     return (
         <div className="container mx-auto my-10 p-2 md:p-5">
+            <Helmet>
+                <title>All Equipment | EquiSports</title>
+            </Helmet>
             {/* Page Heading */}
             <h1 className="text-3xl font-extrabold text-center text-indigo-500 mb-12 -mt-7">
                 All Sports <span className="text-teal-500">Equipment</span>

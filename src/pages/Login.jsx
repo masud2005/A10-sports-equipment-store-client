@@ -3,6 +3,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -74,9 +75,9 @@ const Login = () => {
     return (
         <div className="flex items-center justify-center my-10 px-2">
 
-            {/* <Helmet>
-                <title>Login || Career Counseling</title>
-            </Helmet> */}
+            <Helmet>
+                <title>Login | EquiSports</title>
+            </Helmet>
 
             <div className="bg-white shadow-2xl rounded-lg w-full max-w-md px-5 md:px-8 py-10 border">
                 <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text mb-6 p-1">Welcome Back</h1>

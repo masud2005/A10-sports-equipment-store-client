@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const MyEquipmentList = () => {
     const { user } = useContext(AuthContext);
@@ -60,6 +61,9 @@ const MyEquipmentList = () => {
 
     return (
         <div className="container mx-auto px-2 md:px-4 py-8">
+            <Helmet>
+                <title>My Equipments | EquiSports</title>
+            </Helmet>
             <h1 className="text-3xl font-extrabold text-center text-indigo-500 mb-12">
                 My <span className="text-teal-500">Equipment List</span>
             </h1>

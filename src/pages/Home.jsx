@@ -5,10 +5,14 @@ import FAQ from '../components/FAQ';
 import LimitedProducts from '../components/LimitedProducts';
 import SportsCategories from '../components/SportsCategories';
 import { Bounce, Fade, Slide, Zoom } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div >
+            <Helmet>
+                <title>Home | EquiSports</title>
+            </Helmet>
             <Zoom duration={1000} easing="ease-in-out" triggerOnce>
                 <SportsSlider />
             </Zoom>

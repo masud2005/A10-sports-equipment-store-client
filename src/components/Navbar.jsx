@@ -55,7 +55,7 @@ const Navbar = () => {
             <div className="container mx-auto flex justify-between items-center  py-4 px-2">
                 {/* Left Section: Logo */}
                 <div className="flex items-center">
-                    <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text">Sports Equipment</h1>
+                    <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text">EquiSports</h1>
                 </div>
 
                 {/* Center Section: Navigation Links */}
@@ -84,12 +84,6 @@ const Navbar = () => {
                     </button>
                     {
                         user ? <div className="flex items-center gap-3">
-                            {/* <div className="relative group">
-                                <img className="rounded-full w-14 h-14 border border-teal-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
-                                <div className="absolute left-0 top-full mt-2 px-4 py-2 bg-gray-800 text-white text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap overflow-hidden">
-                                    {user.displayName || 'Anonymous User'}
-                                </div>
-                            </div> */}
                             <div>
                                 <img data-tooltip-id="my-tooltip-1" className="rounded-full w-14 h-14 border border-teal-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
                             </div>
@@ -138,12 +132,6 @@ const Navbar = () => {
                     <div className='flex gap-10 justify-around pt-5 mt-4 border-t-2'>
                         {
                             user ? <div className="flex items-center gap-3">
-                                {/* <div className="relative group">
-                                    <img className="rounded-full w-14 h-14 border border-teal-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
-                                    <div className="absolute left-0 top-full mt-2 px-4 py-2 bg-gray-800 text-white text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap overflow-hidden">
-                                        {user.displayName || 'Anonymous User'}
-                                    </div>
-                                </div> */}
                                 <div>
                                     <img data-tooltip-id="my-tooltip-1" className="rounded-full w-14 h-14 border border-teal-600 shadow-md transition-transform transform hover:scale-110" src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
                                 </div>

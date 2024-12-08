@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 
 const SportsEquipmentDetails = () => {    
@@ -8,6 +9,9 @@ const SportsEquipmentDetails = () => {
 
     return (
         <div className="py-12 px-2 container mx-auto">
+            <Helmet>
+                <title>Equipment Details | EquiSports</title>
+            </Helmet>
             <div className="bg-white rounded-lg shadow-2xl overflow-hidden border w-full ">
                 {/* Left Image Section */}
                 <div className="h-[250px] md:h-[400px] lg:h-[500px] w-full">

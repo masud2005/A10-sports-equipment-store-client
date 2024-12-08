@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const AddEquipment = () => {
 
@@ -55,6 +56,9 @@ const AddEquipment = () => {
 
     return (
         <div className="container mx-auto my-10 p-2 md:p-5">
+            <Helmet>
+                <title>Add Equipment | EquiSports</title>
+            </Helmet>
             <div className='text-center'>
                 <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text inline-block -mt-10">Add New Equipment</h2>
             </div>
