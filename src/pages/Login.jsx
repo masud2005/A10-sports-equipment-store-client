@@ -16,11 +16,11 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         userLogin(email, password)
         .then(result => {
-            console.log(result.user);
+            // console.log(result.user);
             Swal.fire({
                 icon: 'success',
                 title: 'Login Successful',
@@ -32,7 +32,7 @@ const Login = () => {
             navigate(location?.state ? location?.state : '/');
         })
         .catch(error => {
-            console.log(error.code);
+            // console.log(error.code);
             Swal.fire({
                 icon: 'error',
                 title: 'Login Failed',

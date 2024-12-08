@@ -5,7 +5,7 @@ const LimitedProducts = () => {
     const [equipments, setEquipments] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/equipments/limited')
+        fetch('https://sports-equipment-store-server-alpha.vercel.app/equipments/limited')
             .then(res => res.json())
             .then(data => {
                 setEquipments(data);

@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const UpdateEquipment = () => {
     const { user } = useContext(AuthContext);
     const equipment = useLoaderData();
-    const { _id ,image, itemName, categoryName, price, rating, customization, processingTime, stockStatus, userEmail, userName, description } = equipment;
+    const { _id, image, itemName, categoryName, price, rating, customization, processingTime, stockStatus, userEmail, userName, description } = equipment;
 
     // console.log(data);
     const handleUpdateEquipment = (e) => {
@@ -23,10 +23,10 @@ const UpdateEquipment = () => {
         const userEmail = form.userEmail.value;
         const userName = form.userName.value;
         const description = form.description.value;
-    
+
         const updateEquipment = { image, itemName, categoryName, price, rating, customization, processingTime, stockStatus, userEmail, userName, description };
 
-        fetch(`http://localhost:5000/equipments/${_id}`, {
+        fetch(`https://sports-equipment-store-server-alpha.vercel.app/equipments/${_id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -35,8 +35,8 @@ const UpdateEquipment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                if (data.modifiedCount) {
+                // console.log(data);
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Successfully Equipment Updated!',
@@ -44,6 +44,13 @@ const UpdateEquipment = () => {
                     })
                 }
             })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Update Failed!',
+                    text: `An error occurred: ${error.message}`,
+                });
+            });
     }
     return (
         <div className='container mx-auto my-12'>
