@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
-
     const { loginWithGoogle, userLogin } = useContext(AuthContext);
     const location = useLocation();
     // console.log(location);
