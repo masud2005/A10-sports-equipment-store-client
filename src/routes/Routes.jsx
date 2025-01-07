@@ -11,6 +11,7 @@ import SportsEquipmentDetails from "../pages/SportsEquipmentDetails";
 import PrivateRoute from "../components/PrivateRoute";
 import UpdateEquipment from "../pages/UpdateEquipment";
 import AboutUs from "../pages/AboutUs";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
             {
                 path: '/about-us',
                 element: <AboutUs />
+            },
+            {
+                path: '/contact',
+                element: <Contact />
             },
             {
                 path: '/login',

@@ -55,7 +55,7 @@ const AddEquipment = () => {
     }
 
     return (
-        <div className="container mx-auto my-10 p-2 md:p-5">
+        <div className="container mx-auto mt-6 mb-10 p-2 md:p-5">
             <Helmet>
                 <title>Add Equipment | EquiSports</title>
             </Helmet>
