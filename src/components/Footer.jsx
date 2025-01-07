@@ -29,8 +29,8 @@ const Footer = () => {
                     <ul className='text-gray-700 '>
                         <li><NavLink to="/" className="hover:text-gray-900">Home</NavLink></li>
                         <li><NavLink to="/all-sports-equipment" className="hover:text-gray-900">All Sports Equipment</NavLink></li>
-                        <li><NavLink to="/add-equipment" className="hover:text-gray-900">Add Equipment</NavLink></li>
-                        <li><NavLink to="/my-equipment-list" className="hover:text-gray-900">My Equipment List</NavLink></li>
+                        <li><NavLink to="/about-us" className="hover:text-gray-900">About Us</NavLink></li>
+                        <li><NavLink to="/contact" className="hover:text-gray-900">Contact</NavLink></li>
                     </ul>
                 </div>
                 {/* Column 4 */}
