@@ -54,7 +54,6 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                
             </div>
             <div className="text-center mt-8 border-t border-gray-400 pt-4">
                 <span className='text-gray-700'>© {new Date().getFullYear()} EquiSports. Design by. </span>

@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
+import registerAnimation from '../assets/RegisterAnimation.json';
+import Lottie from 'lottie-react';
 
 const Register = () => {
 
@@ -18,9 +20,7 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(name, photo, email, password);
 
-        // Password Validation
         const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!passwordPattern.test(password)) {
             Swal.fire({
@@ -30,13 +30,12 @@ const Register = () => {
                 customClass: {
                     confirmButton: 'bg-red-500 text-white'
                 }
-            })
+            });
             return;
         }
 
         createNewUser(email, password)
             .then(result => {
-                // console.log(result.user);
                 Swal.fire({
                     icon: 'success',
                     title: 'Registration Successful',
@@ -49,7 +48,6 @@ const Register = () => {
                 navigate('/');
             })
             .catch(error => {
-                // console.log(error.code);
                 Swal.fire({
                     icon: 'error',
                     title: 'Registration Failed',
@@ -58,13 +56,12 @@ const Register = () => {
                         confirmButton: 'bg-red-500 text-white'
                     }
                 });
-            })
-    }
+            });
+    };
 
     const handleLoginWithGoogle = (e) => {
         loginWithGoogle()
             .then(result => {
-                // console.log(result);
                 Swal.fire({
                     icon: 'success',
                     title: 'Registration Successful',
@@ -75,7 +72,6 @@ const Register = () => {
                 });
             })
             .catch(error => {
-                // console.log(error.code);
                 Swal.fire({
                     icon: 'error',
                     title: 'Login Failed',
@@ -84,17 +80,17 @@ const Register = () => {
                         confirmButton: 'bg-red-500 text-white'
                     }
                 });
-            })
-    }
+            });
+    };
 
     return (
-        <div className="flex items-center justify-center my-10 px-2">
+        <div className="flex flex-col lg:flex-row items-center justify-center my-10 px-2 container mx-auto">
 
             <Helmet>
                 <title>Register || EquiSports</title>
             </Helmet>
 
-            <div className="bg-white shadow-xl rounded-lg w-full max-w-xl px-5 md:px-8 py-10 border ">
+            <div className="order-2 lg:order-1 bg-white shadow-xl rounded-lg mx-auto w-full max-w-xl px-5 lg:px-8 py-10 border">
                 <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text mb-6 p-1">
                     Register Your Account
                 </h1>
@@ -102,7 +98,7 @@ const Register = () => {
                     {/* Name Field */}
                     <div className="form-control">
                         <label className="label text-lg font-medium text-gray-700">Your Name</label>
-                        <input type="text" name="name" placeholder="Enter your name" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-1 focus:ring-teal-300 transition" required/>
+                        <input type="text" name="name" placeholder="Enter your name" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-1 focus:ring-teal-300 transition" required />
                     </div>
 
                     {/* Photo URL Field */}
@@ -125,7 +121,7 @@ const Register = () => {
                     </div>
 
                     {/* Terms & Conditions */}
-                    <label className=" flex items-center gap-2">
+                    <label className="flex items-center gap-2">
                         <input type="checkbox" defaultChecked className="checkbox checkbox-md border-gray-300" />
                         <span className="text-base text-gray-600">Accept Terms & Conditions</span>
                     </label>
@@ -141,6 +137,9 @@ const Register = () => {
 
                 {/* Redirect to Login */}
                 <p className="text-center text-base font-medium text-gray-600 mt-3">Already have an account?{' '}<Link to="/login" className="text-teal-600 hover:underline">Login Now</Link></p>
+            </div>
+            <div className='order-1 lg:order-2 max-w-2xl '>
+                <Lottie animationData={registerAnimation}></Lottie>
             </div>
         </div>
     );

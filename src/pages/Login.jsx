@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
+import loginAnimation from '../assets/LoginAnimation.json';
+import Lottie from 'lottie-react';
 
 const Login = () => {
     const { loginWithGoogle, userLogin } = useContext(AuthContext);
@@ -19,29 +21,29 @@ const Login = () => {
         // console.log(email, password);
 
         userLogin(email, password)
-        .then(result => {
-            // console.log(result.user);
-            Swal.fire({
-                icon: 'success',
-                title: 'Login Successful',
-                text: `Welcome back, ${result.user.displayName || 'User'}!`,
-                customClass: {
-                    confirmButton: 'bg-teal-500 text-white'
-                }
-            });
-            navigate(location?.state ? location?.state : '/');
-        })
-        .catch(error => {
-            // console.log(error.code);
-            Swal.fire({
-                icon: 'error',
-                title: 'Login Failed',
-                text: error.code,
-                customClass: {
-                    confirmButton: 'bg-red-500 text-white'
-                }
-            });
-        })
+            .then(result => {
+                // console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: `Welcome back, ${result.user.displayName || 'User'}!`,
+                    customClass: {
+                        confirmButton: 'bg-teal-500 text-white'
+                    }
+                });
+                navigate(location?.state ? location?.state : '/');
+            })
+            .catch(error => {
+                // console.log(error.code);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: error.code,
+                    customClass: {
+                        confirmButton: 'bg-red-500 text-white'
+                    }
+                });
+            })
     }
 
     const handleLoginWithGoogle = () => {
@@ -72,13 +74,15 @@ const Login = () => {
     }
 
     return (
-        <div className="flex items-center justify-center my-10 px-2">
+        <div className="md:flex items-center justify-center gap-10 my-10 px-2">
 
             <Helmet>
                 <title>Login | EquiSports</title>
             </Helmet>
-
-            <div className="bg-white shadow-2xl rounded-lg w-full max-w-md px-5 md:px-8 py-10 border">
+            <div className='mb-6 md:mb-0 px-2'>
+                <Lottie animationData={loginAnimation}></Lottie>
+            </div>
+            <div className="bg-white shadow-2xl rounded-lg w-full max-w-md px-5  py-10 border">
                 <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text mb-6 p-1">Welcome Back</h1>
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div className="form-control">
