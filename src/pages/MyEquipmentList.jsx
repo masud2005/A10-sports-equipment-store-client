@@ -72,13 +72,41 @@ const MyEquipmentList = () => {
                     <h1 className='text-center text-3xl font-semibold text-red-400'>You haven't added anything yet. Add some Equipment!</h1>
                 </div>
             }
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="overflow-x-auto ">
+                <table className="table table-zebra">
+                    <thead className="bg-gradient-to-r from-indigo-300 to-teal-300">
+                        <tr className="text-base text-black">
+                            <th>Sl No</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th className='text-center'>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {userEquipments.map((equipment, index) => (
+                            <tr className="text-base" key={equipment._id}>
+                                <th>{index + 1}</th>
+                                <td>{equipment.itemName}</td>
+                                <td>{equipment.categoryName}</td>
+                                <td>${equipment.price}</td>
+                                <td className='flex justify-center space-x-3'>
+                                    <Link to={`/update-equipment/${equipment._id}`} className="flex items-center gap-2 px-4 py-2 text-white bg-teal-500 rounded-lg hover:bg-teal-600 transition-all" > Update </Link>
+                                    <button onClick={() => handleDeleteEquipment(equipment._id)} className="flex items-center gap-2 px-4 py-2 text-white bg-red-400 rounded-lg hover:bg-red-500 transition-all">Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            
+            {/* Card Formate */}
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {userEquipments.map(equipment => (
                     <div
                         key={equipment._id}
                         className="relative bg-gradient-to-br from-teal-50 to-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col"
                     >
-                        {/* Image Section */}
                         <div className="relative h-48">
                             <img
                                 src={equipment.image}
@@ -90,7 +118,6 @@ const MyEquipmentList = () => {
                             </span>
                         </div>
 
-                        {/* Content Section */}
                         <div className="flex-1 p-3 xl:p-6 flex flex-col justify-between">
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text mb-2">{equipment.itemName}</h2>
@@ -110,14 +137,13 @@ const MyEquipmentList = () => {
                             </div>
                         </div>
 
-                        {/* Action Buttons */}
                         <div className="w-full flex items-center justify-center gap-4 bg-gray-50 py-3 border-t">
                             <Link to={`/update-equipment/${equipment._id}`} className="flex items-center gap-2 px-4 py-2 text-white bg-teal-500 rounded-lg hover:bg-teal-600 transition-all" > Update </Link>
                             <button onClick={() => handleDeleteEquipment(equipment._id)} className="flex items-center gap-2 px-4 py-2 text-white bg-red-400 rounded-lg hover:bg-red-500 transition-all">Delete</button>
                         </div>
                     </div>
                 ))}
-            </div>
+            </div> */}
         </div>
     );
 };

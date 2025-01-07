@@ -10,6 +10,7 @@ import ErrorPage from "../pages/ErrorPage";
 import SportsEquipmentDetails from "../pages/SportsEquipmentDetails";
 import PrivateRoute from "../components/PrivateRoute";
 import UpdateEquipment from "../pages/UpdateEquipment";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -28,9 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/sports-equipment/details/:id',
-                element: <PrivateRoute>
-                    <SportsEquipmentDetails />
-                </PrivateRoute>,
+                element: <SportsEquipmentDetails />,
                 loader: ({ params }) => fetch(`https://sports-equipment-store-server-alpha.vercel.app/equipments/${params.id}`)
 
             },
@@ -50,6 +49,10 @@ const router = createBrowserRouter([
                 path: '/update-equipment/:id',
                 element: <UpdateEquipment />,
                 loader: ({ params }) => fetch(`https://sports-equipment-store-server-alpha.vercel.app/equipments/${params.id}`)
+            },
+            {
+                path: '/about-us',
+                element: <AboutUs />
             },
             {
                 path: '/login',

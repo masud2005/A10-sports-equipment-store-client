@@ -39,7 +39,7 @@ const LimitedProducts = () => {
                         </div>
 
                         {/* Content Section */}
-                        <div className="flex-1 p-3 xl:p-6 flex flex-col justify-between">
+                        <div className="flex-1 p-3 flex flex-col justify-between">
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-teal-500 text-transparent bg-clip-text mb-2">{equipment.itemName}</h2>
                                 <p className=" text-gray-500 mb-1">

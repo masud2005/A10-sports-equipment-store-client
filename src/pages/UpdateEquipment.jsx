@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -7,6 +7,7 @@ const UpdateEquipment = () => {
     const { user } = useContext(AuthContext);
     const equipment = useLoaderData();
     const { _id, image, itemName, categoryName, price, rating, customization, processingTime, stockStatus, userEmail, userName, description } = equipment;
+    const navigate = useNavigate();
 
     // console.log(data);
     const handleUpdateEquipment = (e) => {
@@ -42,6 +43,7 @@ const UpdateEquipment = () => {
                         title: 'Successfully Equipment Updated!',
                         text: 'Your equipment has been successfully updated to the Database.'
                     })
+                    navigate('/my-equipment-list')
                 }
             })
             .catch(error => {
