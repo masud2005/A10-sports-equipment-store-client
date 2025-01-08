@@ -45,3 +45,19 @@ Visit the live application: [Sports Equipment Management System](https://sports-
 - **Firebase** (Frontend) & **Vercel** (Backend)
 
 ---
+
+## Running the Application Locally
+
+### Prerequisites:
+- **Node.js** (version 14 or later) installed.
+- **MongoDB** (either local or MongoDB Atlas).
+- A **Firebase account** for authentication (Google login and Email/Password login).
+
+### Setup Instructions:
+
+1. **Clone the repository**:
+   Clone the **Sports Equipment Management System** repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/sports-equipment-management-system.git
+   cd sports-equipment-management-system
