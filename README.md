@@ -53,11 +53,17 @@ Visit the live application: [Sports Equipment Management System](https://sports-
 - **MongoDB** (either local or MongoDB Atlas).
 - A **Firebase account** for authentication (Google login and Email/Password login).
 
-### Setup Instructions:
+## Installation
 
-1. **Clone the repository**:
-   Clone the **Sports Equipment Management System** repository to your local machine:
+Step-by-step instructions to set up the project locally.
 
-   ```bash
-   git clone https://github.com/your-username/sports-equipment-management-system.git
-   cd sports-equipment-management-system
+```bash
+# Clone the repository
+git clone https://github.com/your-username/sports-equipment-management-system.git
+
+# Navigate to the project directory
+cd sports-equipment-management-system
+
+# Install dependencies
+npm install
+
