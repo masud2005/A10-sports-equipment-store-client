@@ -3,6 +3,11 @@
 ### Project Overview
 The Sports Equipment Management System is a full-stack web application designed to facilitate managing, listing, and updating sports equipment details. This application enables users to add, view, update, and delete equipment, along with user authentication for secure access.
 
+### Website Preview
+<div align="center">
+  <img src="https://i.ibb.co.com/kVqKQphw/sports.png" alt="Sports Equipment Management System Homepage" width="100%" />
+</div>
+
 ### Live Website
 Visit the live application: [Sports Equipment Management System](https://sports-equipment-store-c035a.web.app/)
 
