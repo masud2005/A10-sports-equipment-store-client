@@ -59,10 +59,10 @@ Step-by-step instructions to set up the project locally.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/sports-equipment-management-system.git
+https://github.com/masud2005/A10-sports-equipment-store-client.git
 
 # Navigate to the project directory
-cd sports-equipment-management-system
+cd A10-sports-equipment-store-client
 
 # Install dependencies
 npm install
